@@ -1,8 +1,7 @@
 -- Car Dealership
 
---Tables
+--Creating tables
 
---create customer table
 create table customer (
 	customer_id SERIAL primary key,
 	first_name VARCHAR(50),
@@ -34,12 +33,10 @@ create table parts (
 create table car (
 	car_id SERIAL primary key,
 	customer_id INT references customer(customer_id),
-	sales_id INT references sales_associate(sales_id),
 	make VARCHAR(50),
 	model VARCHAR(50),
 	color VARCHAR(50),
 	year VARCHAR(4),
-	price NUMERIC(10,2)
 );
 
 
@@ -73,4 +70,3 @@ create table invoice (
 	sales_id INT references sales_associate(sales_id),
 	total NUMERIC(10,2)
 );
-		
